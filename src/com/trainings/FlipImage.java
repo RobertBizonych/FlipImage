@@ -27,11 +27,11 @@ public class FlipImage {
         int width = array[0].length;
         int height = array.length;
         for (int line = 0; line < height; line++) {
-            for (int subArray = 0; subArray < width/2; subArray++) {
-                int p2 = width - subArray - 1;
-                int temp = array[line][subArray];
-                array[line][subArray] = array[line][p2];
-                array[line][p2] = temp;
+            for (int part1 = 0; part1 < width/2; part1++) {
+                int part2 = width - part1 - 1;
+                int temp = array[line][part1];
+                array[line][part1] = array[line][part2];
+                array[line][part2] = temp;
             }
         }
         setOutputImage(new GImage(array));
